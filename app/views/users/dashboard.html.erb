@@ -1,5 +1,8 @@
 <div>
   <div><h1>Pending Videos:</h1></div>
+  <% @videos.each do |video| %>
+    <div><%= "Consumer: #{video.user.name} - Status: #{video.status}" %><%= link_to "Accept request and send video", edit_video_path(video) %></div>
+  <% end %>
   <div><h1>My categories:</h1>
   <% current_user.categories.each do |category| %>
     <%= category.title %>
