@@ -9,14 +9,13 @@ require 'faker'
 
 puts 'Deleting all categories'
 Category.destroy_all
+puts 'Categories deleted.'
+
 puts 'Deleting all users'
 User.destroy_all
 puts 'Users deleted'
 
-puts 'Categories destroyed'
-
 puts 'Creating new users DB'
-
 10.times do
   user = User.new(
     email: Faker::Internet.unique.email,
@@ -25,9 +24,25 @@ puts 'Creating new users DB'
     role: User::ROLE.sample
   )
   user.save!
+  puts "#{user.name} created"
 end
-
-puts 'Users created'
+puts 'All users created.'
 
 puts 'Creating categories DB'
+
+category_birthday = Category.new(
+  title: 'Birthday',
+  price: 50.00,
+  user_id: User.ids.sample
+)
+category_birthday.save!
+puts 'Birthday category created.'
+
+category_wedding = Category.new(
+  title: 'Wedding',
+  price: 100.00,
+  user_id: User.ids.sample
+)
+category_wedding.save!
+puts 'Wedding category created.'
 
