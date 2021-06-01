@@ -1,9 +1,15 @@
-<div>
+<h1>Dromedarial</h1>
+<h2>Artsits</h2>
+<hr>
+<div class="users-cards">
 
-<% @users.each do |user| %>
-<h2><%= user.name%></h2>
-<p><%= user.email%></p>
-<p><%= user.role%></p>
-<% end %>
+  <% @users.each do |user| %>
+  <div class="user-card">
+    <img src="https://kitt.lewagon.com/placeholder/users/dedemenezes" alt="">
+    <h3><%= link_to user.name, user_path(user) %></h3>
+    <p><%= user.email%></p>
+    <p><%= user.role%></p>
+  </div>
+  <% end %>
 
 </div>
