@@ -1,0 +1,9 @@
+<div>
+  <div><h1>Pending Videos:</h1></div>
+  <div><h1>My categories:</h1>
+  <% current_user.categories.each do |category| %>
+    <%= category.title %>
+  <% end %>
+  </div>
+  <%= link_to "Insert a new category", new_category_path %>
+</div>
