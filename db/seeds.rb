@@ -9,14 +9,13 @@ require 'faker'
 
 puts 'Deleting all categories'
 Category.destroy_all
+puts 'Categories deleted.'
+
 puts 'Deleting all users'
 User.destroy_all
 puts 'Users deleted'
 
-puts 'Categories destroyed'
-
 puts 'Creating new users DB'
-
 10.times do
   user = User.new(
     email: Faker::Internet.unique.email,
@@ -25,9 +24,7 @@ puts 'Creating new users DB'
     role: User::ROLE.sample
   )
   user.save!
+  puts "#{user.name} created"
 end
-
-puts 'Users created'
-
-puts 'Creating categories DB'
+puts 'All users created.'
 
