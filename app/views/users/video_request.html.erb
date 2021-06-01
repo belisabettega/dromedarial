@@ -1,0 +1,5 @@
+<% categs = Category.where user_id:@user.id %>
+<%= simple_form_for @video do |f| %>
+  <%= f.association :category, collection: categs, prompt: 'Select category' %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
