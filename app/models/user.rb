@@ -3,9 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :categories
   has_many :videos
-  ROLE = ['artist', 'costumer']
+  ROLE = ['artist', 'customer']
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  validates :role, presence: true, inclusion: { in: ROLE }
+  validates :name, presence: true
 end

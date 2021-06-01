@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+puts 'Deleting all categories'
+Category.destroy_all
 puts 'Deleting all users'
 User.destroy_all
 puts 'Users deleted'
 
-puts 'Deleting all categories'
-Category.destroy_all
 puts 'Categories destroyed'
 
 puts 'Creating new users DB'
@@ -20,12 +20,11 @@ puts 'Creating new users DB'
 10.times do
   user = User.new(
     email: Faker::Internet.unique.email,
-    encrypted_password: 'test',
-    overview: Faker::Lorem.paragraph,
+    password: 'Test123',
     name: Faker::Name.unique.name,
     role: User::ROLE.sample
   )
-  user.save
+  user.save!
 end
 
 puts 'Users created'
