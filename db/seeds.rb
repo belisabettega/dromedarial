@@ -32,3 +32,20 @@ puts 'Users created'
 
 puts 'Creating categories DB'
 
+puts 'Creating birthday category'
+category_birthday = Category.new(
+  title: 'Birthday',
+  price: 50
+)
+category_birthday.save
+puts 'Birthday category created.'
+
+puts 'Creating wedding'
+category_wedding = Category.new(
+  title: 'Wedding',
+  price: 100
+)
+category_wedding.save
+puts 'Wedding category created.'
+
+puts 'DB creation done.'
