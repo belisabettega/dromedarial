@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
-
 }
 
 .user-card {
@@ -26,11 +25,31 @@
   }
 
   .artist-name {
-    background: #F4F4F4;
-    background-size: 10px;
+    color: black;
+    background-color: #F4F4F4;
+    margin-top: 50px;
+    padding: 5% 20px;
+
+    -webkit-transform: skewY(5deg);
+    -moz-transform: skewY(5deg);
+    -ms-transform: skewY(5deg);
+    -o-transform: skewY(5deg);
+    transform: skewY(5deg);
   }
 
   .artist-role {
     color: white;
+    font-size: 2em;
+
+    -webkit-transform: skewY(5deg);
+    -moz-transform: skewY(5deg);
+    -ms-transform: skewY(5deg);
+    -o-transform: skewY(5deg);
+    transform: skewY(5deg);
+  }
+
+  .user-card:link {
+    text-decoration: none;
+    color: black;
   }
 }
