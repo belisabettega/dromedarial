@@ -28,21 +28,3 @@ puts 'Creating new users DB'
 end
 puts 'All users created.'
 
-puts 'Creating categories DB'
-
-category_birthday = Category.new(
-  title: 'Birthday',
-  price: 50.00,
-  user_id: User.ids.sample
-)
-category_birthday.save!
-puts 'Birthday category created.'
-
-category_wedding = Category.new(
-  title: 'Wedding',
-  price: 100.00,
-  user_id: User.ids.sample
-)
-category_wedding.save!
-puts 'Wedding category created.'
-
