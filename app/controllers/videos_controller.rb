@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  def new
+  def video_request
     @video = Video.new
   end
 end
