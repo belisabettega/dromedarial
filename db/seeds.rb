@@ -23,7 +23,12 @@ puts 'Creating new users DB'
     encrypted_password: 'test',
     overview: Faker::Lorem.paragraph,
     name: Faker::Name.unique.name,
+    role: User::ROLE.sample
   )
+  user.save
 end
 
 puts 'Users created'
+
+puts 'Creating categories DB'
+
