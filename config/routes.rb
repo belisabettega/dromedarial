@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   end
   resources :videos, only: [:edit, :update]
   get 'dashboard', to: 'users#dashboard'
+  get 'change_status/:id', to: 'videos#change_status', as: :change_status
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
