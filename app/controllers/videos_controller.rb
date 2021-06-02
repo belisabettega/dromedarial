@@ -1,5 +1,4 @@
 class VideosController < ApplicationController
-    before_action :set_video
     def edit
       @video = Video.find(params[:id])
     end
