@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_users, only:[:show]
+  before_action :set_users, only: [:show]
 
   def index
     @users = User.where(role: 'artist')
