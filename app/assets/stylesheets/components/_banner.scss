@@ -2,6 +2,10 @@
   width: 100%;
   background: $gradient-color;
   display:flex;
+
+  img {
+    filter: drop-shadow(20px 5px 4px #ef5128);
+  }
 }
 
 .box {
@@ -10,7 +14,11 @@
   display:flex;
   justify-content: center;
   align-items: center;
-   h1 {
+  p {
+    line-height: .7;
+     }
+
+  p, h1 {
     font-size: 55px;
     font-family: 'Fredoka One', cursive;
   }
