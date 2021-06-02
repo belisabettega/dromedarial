@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'users#index'
   resources :users, except: [:index, :destroy, :edit, :update] do
-    member do
-      get :video_request
-    end
+    resources :videos, only: [:new]
   end
   resources :categories, only: [:new, :create]
   resources :videos, only: [:edit, :update, :create]
