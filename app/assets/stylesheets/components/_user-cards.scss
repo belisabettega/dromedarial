@@ -18,22 +18,18 @@
   text-align: center;
   overflow:hidden;
 
-  .artist-name, .artist-role {
-    display: flex;
-    justify-content: center;
-    transform: rotate(7deg);
-    font-family: 'Fredoka One', cursive;
-  }
-
   .artist-name {
     background-color: #F4F4F4;
     margin-top: 50px;
     padding: 5% 20px;
-
     -webkit-transform: skewY(5deg);
   }
 
   .artist-role {
+    display: flex;
+    justify-content: center;
+
+    font-family: 'Fredoka One', cursive;
     color: white;
     font-size: 2em;
 
@@ -44,4 +40,8 @@
     text-decoration: none;
     color: black;
   }
+}
+
+.artist-name h3 {
+  font-family: 'Fredoka One', cursive;
 }
