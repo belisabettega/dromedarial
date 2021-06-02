@@ -3,5 +3,5 @@
   <h2><%= @user.name%></h2>
   <p><%= @user.email%></p>
   <p><%= @user.role%></p>
-  <%= link_to 'Order a video', video_request_user_path, class: 'btn btn-primary' %>
+  <%= link_to 'Order a video', new_user_video_path(@user), class: 'btn btn-primary' %>
 </div>
