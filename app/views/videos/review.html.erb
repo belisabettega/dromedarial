@@ -1,0 +1,5 @@
+<%= simple_form_for @video, url: set_review_path(@video) do |f| %>
+  <%= f.input :review %>
+  <%= f.input :rating %>
+  <%= f.submit %>
+<% end %>

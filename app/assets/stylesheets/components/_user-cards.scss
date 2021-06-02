@@ -1,20 +1,67 @@
-.users-cards {
-display: grid;
-grid-template-columns: 1fr, 1fr, 1fr, 1fr, 1fr;
-grid-gap: 20px;
+.users-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+  :hover {
+    text-decoration: none;
+  }
 
+  .bg-img {
+    background-image: url("https://kitt.lewagon.com/placeholder/users/dedemenezes");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .gradient-box {
+    border: 8px solid black;
+    border-radius: 10px;
+  }
 }
 
 .user-card {
-  width: 200px;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 250px;
+  height: 400px;
   box-shadow: 1px 1px 2px gray;
   text-align: center;
   overflow:hidden;
-    img {
-      width: 100%;
-    }
- a {
-  color: black;
- }
+
+  .artist-name {
+    background-color: #F4F4F4;
+    margin-top: 50px;
+    padding: 5% 20px;
+    -webkit-transform: skewY(5deg);
+  }
+
+  .artist-role {
+    display: flex;
+    justify-content: center;
+
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    font-size: 2em;
+
+    -webkit-transform: skewY(5deg);
+    -moz-transform: skewY(5deg);
+    -ms-transform: skewY(5deg);
+    -o-transform: skewY(5deg);
+    transform: skewY(5deg);
+  }
+}
+
+.artist-name {
+  h3 {
+    font-family: 'Fredoka One', cursive;
+  }
+  .gradient-text {
+    background-image: $gradient-color;
+    background-size: 100%;
+
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
 }

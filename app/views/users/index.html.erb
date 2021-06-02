@@ -1,15 +1,23 @@
-<h1>Dromedarial</h1>
-<h2>Artsits</h2>
-<hr>
-<div class="users-cards">
-
-  <% @users.each do |user| %>
-  <div class="user-card">
-    <img src="https://kitt.lewagon.com/placeholder/users/dedemenezes" alt="">
-    <h3><%= link_to user.name, user_path(user) %></h3>
-    <p><%= user.email%></p>
-    <p><%= user.role%></p>
+<div class="banner">
+  <div class="box row">
+    <div class="col-6"><h1>FIND YOUR FAVOURITE <span>ARTIST</span> NOW</h1></div>
+    <div class="col-6"><%= image_tag "photo_banner.png", alt: "banner", width: 500 %></div>
   </div>
-  <% end %>
+</div>
 
+<div class="container-cards">
+  <div class="users-cards-grid">
+    <% @users.each do |user| %>
+      <%= link_to user_path(user) do %>
+        <div class="user-card gradient-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path user.photo.key, height: 300, crop: :fill %>')">
+          <div class="artist-name">
+            <h3 class="gradient-text"><%= user.name %></h3>
+          </div>
+          <div class="artist-role">
+            <p><%= user.role %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>

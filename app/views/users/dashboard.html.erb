@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex flex-row p-3 justify-content-between align-items-center">
+      <h1>Categories</h1>
+      <%= link_to "Add new category", new_category_path, class:'btn btn-primary' %>
+    </div>
+    <% current_user.categories.each do |category| %>
+      <div class="card">
+        <h5 class="card-header"><%= category.title %></h5>
+        <div class="card-body">
+          <h5 class="card-title">This category costs R$ <%= category.price %></h5>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    <% end %>
+    </div>
+    
+    <div class="col">
+      <div class="d-flex p-3 justify-content-between align-items-center">
+      <h1>Videos</h1>
+    </div>
+      <% @videos.each do |video| %>    
+      <div class="card">
+        <h5 class="card-header">This is a video from the category <%= video.category.title %></h5>
+        <div class="card-body">
+          <h5 class="card-title">The request was made by R$ <%= video.user.name %> and the status of the request is <%= video.status %> </h5>
+          <%= link_to "Accept request and send video", edit_video_path(video), class:"btn btn-primary" %>
+          <%= link_to "Refuse video", change_status_path(video), class:"btn btn-primary" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>

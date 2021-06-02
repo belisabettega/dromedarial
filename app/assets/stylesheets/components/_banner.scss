@@ -1,0 +1,21 @@
+.banner {
+  width: 100%;
+  background: $gradient-color;
+  display:flex;
+}
+
+.box {
+  width: 500px;
+  margin: 0 auto;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+   h1 {
+    font-size: 55px;
+    font-family: 'Fredoka One', cursive;
+  }
+  span {
+    color: white;
+  }
+}
+
