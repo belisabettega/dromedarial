@@ -1,0 +1,64 @@
+.user-details-photo{
+  width: 200px;
+  height: 200px;
+  box-shadow: 1px 1px 2px gray;
+  text-align: center;
+  overflow:hidden;
+  background-position: center;
+  border-radius: 10px;
+  margin-right: 100px;
+}
+
+.user-details {
+  display:flex;
+margin-top: 60px;
+width: 100%;
+}
+
+.reviews {
+  display:flex;
+}
+
+.user-info {
+  width:50%;
+}
+
+h2, h4, p {
+  font-family: 'Fredoka One', cursive;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+p {
+  font-size: 1.4rem;
+}
+
+.gradient-text {
+    background-image: $gradient-color;
+    background-size: 100%;
+
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+
+a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  &:hover {
+    color:white;
+    text-decoration: none;
+  }
+}
+.order-btn {
+    background-image: $gradient-color;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
