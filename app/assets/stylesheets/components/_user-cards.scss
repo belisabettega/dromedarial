@@ -10,6 +10,7 @@
     background-image: url("https://kitt.lewagon.com/placeholder/users/dedemenezes");
     background-position: center;
     background-size: cover;
+    transition: transfomr 0.6s;
   }
 
   .gradient-box {
@@ -64,4 +65,8 @@
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
   }
+}
+
+.bg-img:hover {
+  transform: scale(1.1);
 }

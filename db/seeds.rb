@@ -16,7 +16,7 @@ User.destroy_all
 puts 'Users deleted'
 
 puts 'Creating new users DB'
-10.times do
+20.times do
   user = User.new(
     email: Faker::Internet.unique.email,
     password: 'Test123',
