@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex flex-row p-3 justify-content-between align-items-center">
+      <h1>My purchased videos</h1>
+    </div>
+    <% @videos.each do |video| %>
+      <div class="card">
+        <h5 class="card-header"><%= video.category.title %></h5>
+        <div class="card-body">
+          <h5 class="card-title">Status of the order: <%= video.status %></h5>
+          <% if video.review && video.rating %>
+            <h5 class="card-title"> Review: <%= "#{video.review} - #{video.rating}" %></h5>
+          <% elsif video.status == "completed" %>
+            <%= link_to "Add a review for this video", add_review_path(video), class:"btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
