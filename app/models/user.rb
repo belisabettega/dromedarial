@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :categories
   has_many :videos
+  has_one_attached :photo
   ROLE = ['artist', 'customer']
 
   devise :database_authenticatable, :registerable,
