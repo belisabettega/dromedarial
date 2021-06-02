@@ -1,6 +1,6 @@
 <div class="banner">
   <div class="box row">
-    <div class="col-6 px-1"><h1>FIND NOW YOUR FAVOURITE <span id="banner-typed-text"></span></h1><p class="title">NOW</p></div>
+    <div class="col-6 px-1"><h1>FIND YOUR FAVOURITE <span id="banner-typed-text"></span></h1><p class="title">NOW</p></div>
     <div class="col-6"><%= image_tag "photo_banner_shadowless.png", alt: "banner", width: 400 %></div>
   </div>
 </div>
@@ -9,7 +9,11 @@
   <div class="users-cards-grid">
     <% @users.each do |user| %>
       <%= link_to user_path(user) do %>
-        <div class="user-card gradient-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path user.photo.key, height: 300, crop: :fill %>')">
+         <% if user.photo %>
+           <div class="user-card gradient-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path user.photo.key, height: 300, crop: :fill %>')">
+         <% else %>
+           <div class="user-card gradient-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://kitt.lewagon.com/placeholder/users/dedemenezes')">
+         <% end %>
           <div class="artist-name">
             <h3 class="gradient-text"><%= user.name %></h3>
           </div>
