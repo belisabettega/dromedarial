@@ -12,7 +12,7 @@
           <% if video.review && video.rating %>
             <h5 class="card-title"> Review: <%= "#{video.review} - #{video.rating}" %></h5>
           <% elsif video.status == "completed" %>
-            <%= link_to "Add a review for this video", add_review_path(video), class:"btn btn-primary" %>
+            <%= link_to "Add a review for this video", add_review_path(video), class:"btn-default" %>
           <% end %>
         </div>
       </div>
