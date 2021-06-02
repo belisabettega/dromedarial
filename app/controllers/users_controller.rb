@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     @videos = Video.where(category_id: current_user.category_ids)
   end
 
+  def purchases
+    @videos = current_user.videos
+  end
+
   private
 
   def set_users

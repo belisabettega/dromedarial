@@ -17,6 +17,17 @@ class VideosController < ApplicationController
       @video.save
       redirect_to dashboard_path
     end
+
+    def review
+    end
+
+    def set_review
+      if @video.update(review_params)
+        redirect_to purchases_path
+      else
+        render 'review'
+      end
+    end
    
     private
 
@@ -26,5 +37,9 @@ class VideosController < ApplicationController
    
     def videos_params
       params.require(:video).permit(:content)
+    end
+
+    def review_params
+      params.require(:video).permit(:review, :rating)
     end
 end
