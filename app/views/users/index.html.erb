@@ -9,7 +9,7 @@
   <div class="users-cards-grid">
     <% @users.each do |user| %>
       <%= link_to user_path(user) do %>
-        <div class="user-card gradient-box">
+        <div class="user-card gradient-box bg-img">
           <div class="artist-name">
             <h3 class="gradient-text"><%= user.name %></h3>
           </div>
