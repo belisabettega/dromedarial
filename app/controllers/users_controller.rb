@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   before_action :set_users, only: [:show]
 
   def index
-    @users = User.where(role: 'artist')
+    if params[:query].present?
+      @users = User.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @users = User.where(role: 'artist')
+    end
   end
 
   def show
