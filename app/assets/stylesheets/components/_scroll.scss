@@ -1,17 +1,16 @@
 .wrapper{
-    max-height: 150px;
+    max-height: 420px;
     border: 1px solid #ddd;
     display: flex;
     overflow-x: auto;
-    width: 500px;
-    margin: 50px;
+    width: 100%;
     .item{
-        min-width: 210px;
+        min-width: 200px;
         border-radius: 10px;
-        height: 310px;
+        height: 200px;
         line-height: 110px;
         text-align: center;
-        background-color: #ddd;
+        background-color: #000;
         margin-right: 10px;
     }
 }
@@ -25,8 +24,7 @@
     border: 1px solid #ddd;
     display: flex;
     overflow-x: auto;
-    width: 900px;
-    margin: 50px;
+    width: 100%;
     .item-video{
         width: 300px;
         height: 310px;
@@ -58,4 +56,14 @@
     margin-top: 50px;
     padding: 5% 20px;
     box-shadow: -10px 8px 40px black;
+}
+
+.border-top-card{
+    border-top: $pink 2px solid;
+    height: 200px;
+    width: 500px;
+}
+
+.headline-text{
+    font-size: 50px;
 }
