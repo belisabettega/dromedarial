@@ -8,10 +8,11 @@ class VideosController < ApplicationController
   def create
     @video = Video.new(video_params)
     @video.user_id = current_user.id
+    @video.status = "Pending"
     @user = User.find(params[:video][:user_id])
     authorize @video
-    if @video.save!
-      redirect_to root_path
+    if @video.save
+      redirect_to purchases_path
     else
       redirect_to new_user_video_path(@user)
     end

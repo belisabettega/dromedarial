@@ -13,13 +13,15 @@
       </div>
     <% @videos.each do |video| %>
       <div class="card my-3">
-        <h5 class="card-header"><%= video.category.title %></h5>
+        <h5 class="card-header"><%= "#{video.category.user.name} - #{video.category.title}" %></h5>
         <div class="card-body">
-          <h5 class="card-title">Status of the order: <%= video.status %></h5>
+          <div class="card-title status-video"><%= video.status %></div>
           <% if video.review && video.rating %>
             <h5 class="card-title"> Review: <%= "#{video.review} - #{video.rating}" %></h5>
           <% elsif video.status == "completed" %>
-            <%= link_to "Add a review for this video", add_review_path(video), class:"bttn-default" %>
+            <% if policy(video).set_review? %>
+              <%= link_to "Add a review for this video", add_review_path(video), class:"bttn-default" %>
+            <% end %>
           <% end %>
         </div>
       </div>

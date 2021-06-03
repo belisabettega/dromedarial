@@ -12,7 +12,9 @@
        <p class="mr-4 gradient-text"><i class="far fa-clock"></i> answer in 24hs</p>
        <p class="gradient-text"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
      </div>
-     <%= link_to 'Order a video', new_user_video_path(@user), class: 'bttn-default' %>
+     <% if policy(Video).create? %>
+      <%= link_to 'Order a video', new_user_video_path(@user), class: 'bttn-default' %>
+     <% end %>
    </div>
   </div>
 </div>

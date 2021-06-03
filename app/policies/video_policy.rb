@@ -41,6 +41,5 @@ class VideoPolicy < ApplicationPolicy
 
   def is_artist?
     user.role == 'artist' && user == record.category.user
-    # record.where(category_id: user.category_ids)
   end
 end
