@@ -8,7 +8,8 @@
   margin-top: 3%;
 
   h2 {
-    font-size: 150%;
+    font-size: 160%;
+    font-weight: bold;
   }
 
   p {
@@ -35,8 +36,13 @@
   h2 {
     margin-top: 10%;
   }
+
   i {
     font-size: 180%;
     margin: 0 3%;
+  }
+
+  p {
+    font-family: $fredoka-font;
   }
 }
