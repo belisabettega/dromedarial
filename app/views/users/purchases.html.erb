@@ -1,11 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col dash-card">
       <div class="d-flex flex-row p-3 justify-content-between align-items-center">
       <h1>My purchased videos</h1>
     </div>
+      <div class="card my-3">
+        <h5 class="card-header">No videos yet?</h5>
+        <div class="card-body">
+          <h5 class="card-title">You can order videos inside your artists details!</h5>
+            <%= link_to "Search for an artist!", root_path, class:"btn btn-primary" %>
+        </div>
+      </div>
     <% @videos.each do |video| %>
-      <div class="card">
+      <div class="card my-3">
         <h5 class="card-header"><%= video.category.title %></h5>
         <div class="card-body">
           <h5 class="card-title">Status of the order: <%= video.status %></h5>

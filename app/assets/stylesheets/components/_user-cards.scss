@@ -56,17 +56,15 @@
   h3 {
     font-family: 'Fredoka One', cursive;
   }
-  .gradient-text {
-    background-image: $gradient-color;
-    background-size: 100%;
-
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-  }
 }
 
 .bg-img:hover {
   transform: scale(1.1);
 }
+
+.container-cards {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+
