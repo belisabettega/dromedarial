@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_users, only: [:show]
 
   def index
@@ -10,10 +11,12 @@ class UsersController < ApplicationController
 
   def dashboard
     @videos = Video.where(category_id: current_user.category_ids)
+    authorize @videos
   end
 
   def purchases
     @videos = current_user.videos
+    authorize @videos
   end
 
   private
