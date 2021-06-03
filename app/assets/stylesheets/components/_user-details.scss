@@ -11,31 +11,34 @@
 
 .user-details {
   display:flex;
-margin-top: 60px;
-width: 100%;
+  margin-top: 60px;
+  width: 100%;
+
+  h2, h4 {
+    font-family: 'Fredoka One', cursive;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
 }
 
+
+.user-details
 .reviews {
   display:flex;
 }
 
 .user-info {
   width:50%;
-}
-
-h2, h4, p {
-  font-family: 'Fredoka One', cursive;
-}
-
-h2 {
-  font-size: 1.7rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-p {
-  font-size: 1.4rem;
 }
 
 .gradient-text {
