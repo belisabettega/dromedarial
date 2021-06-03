@@ -10,13 +10,17 @@ class UsersController < ApplicationController
   end
 
   def dashboard
+    @user = current_user
     @videos = Video.where(category_id: current_user.category_ids)
     authorize @videos
+    authorize @user
   end
 
   def purchases
+    @user = current_user
     @videos = current_user.videos
     authorize @videos
+    authorize @user
   end
 
   private

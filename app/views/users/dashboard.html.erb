@@ -37,8 +37,10 @@
         <h5 class="card-header">This is a video from the category <%= video.category.title %></h5>
         <div class="card-body">
           <h5 class="card-title">The request was made by R$ <%= video.user.name %> and the status of the request is <%= video.status %> </h5>
-          <%= link_to "Accept request and send video", edit_video_path(video), class:"bttn-default" %>
-          <%= link_to "Refuse video", change_status_path(video), class:"bttn-default" %>
+          <% if policy(video).update? %>
+            <%= link_to "Accept request and send video", edit_video_path(video), class:"bttn-default" %>
+            <%= link_to "Refuse video", change_status_path(video), class:"bttn-default" %>
+          <% end %>
         </div>
       </div>
       <% end %>
