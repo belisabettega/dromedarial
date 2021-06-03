@@ -3,7 +3,7 @@
     <div class="col  dash-card">
       <div class="d-flex flex-row p-3 justify-content-between align-items-center">
       <h1>Categories</h1>
-      <%= link_to "Add new category", new_category_path, class:'btn-default' %>
+      <%= link_to "Add new category", new_category_path, class:'bttn-white' %>
     </div>
     <div class="card">
         <h5 class="card-header"> A category has a title</h5>
@@ -29,7 +29,7 @@
         <h5 class="card-header"> Soon you'll have a bunch of orders!</h5>
         <div class="card-body">
           <h5 class="card-title"> But if you want to order an video, you can! Click below to search for an artist of choice </h5>
-          <%= link_to "Search other artist", root_path, class:"btn btn-primary" %>
+          <%= link_to "Search other artist", root_path, class:"bttn-default" %>
         </div>
       </div>
       <% @videos.each do |video| %>    
@@ -37,8 +37,8 @@
         <h5 class="card-header">This is a video from the category <%= video.category.title %></h5>
         <div class="card-body">
           <h5 class="card-title">The request was made by R$ <%= video.user.name %> and the status of the request is <%= video.status %> </h5>
-          <%= link_to "Accept request and send video", edit_video_path(video), class:"btn-default" %>
-          <%= link_to "Refuse video", change_status_path(video), class:"btn-default" %>
+          <%= link_to "Accept request and send video", edit_video_path(video), class:"bttn-default" %>
+          <%= link_to "Refuse video", change_status_path(video), class:"bttn-default" %>
         </div>
       </div>
       <% end %>
