@@ -8,7 +8,7 @@
      <h2 class="gradient-text"><%= @user.name.upcase%></h2>
      <h4 class="gradient-text"><%= @user.role%></h4>
      <p class="gradient-text">Hi, my name is <%= @user.name%></p>
-     <div class="reviews">
+     <div class="review-text">
        <p class="mr-4 gradient-text"><i class="far fa-clock"></i> answer in 24hs</p>
        <p class="gradient-text"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
      </div>
@@ -16,5 +16,26 @@
       <%= link_to 'Order a video', new_user_video_path(@user), class: 'bttn-default' %>
      <% end %>
    </div>
+  </div>
+
+  <div class="reviews p-4">
+    <h2>Reviews</h2>
+    <%  @videos.each do |video| %>
+      <% if video.review.present? %>
+      <div class="review">
+        <div class="review-content">
+          <% if video.user.photo.present? %>
+             <%= cl_image_tag video.user.photo.key,  crop: :fill, class: "avatar-large" %>
+          <% else %>
+            <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
+          <% end %>
+          <div class="description">
+            <p><small><i class="fas fa-star yellow-icon"></i> <%= video.rating %></small></p>
+            <p><%= video.review %></p>
+          </div>
+        </div>
+      </div>
+      <% end%>
+    <% end %>
   </div>
 </div>

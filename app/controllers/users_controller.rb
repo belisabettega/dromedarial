@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @videos = Video.where(category_id: @user.category_ids)
   end
 
   def dashboard

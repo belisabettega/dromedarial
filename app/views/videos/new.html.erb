@@ -1,5 +1,9 @@
-<%= simple_form_for(@video) do |f| %>
-  <%= f.association :category, collection: @user.categories, prompt: 'Select category' %>
-  <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
-  <%= f.submit class: 'bttn-default' %>
-<% end %>
+<div class="container-video">
+  <div class="login-box">
+    <%= simple_form_for(@video) do |f| %>
+      <%= f.association :category, collection: @user.categories, prompt: 'Select category', label: false %>
+      <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
+      <%= f.button :submit, class: 'bttn-white' %>
+    <% end %>
+  </div>
+</div>
