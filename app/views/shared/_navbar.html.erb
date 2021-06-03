@@ -5,6 +5,14 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <%= form_tag root_path, method: :get, class: "d-flex search-bar" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control search-input",
+      placeholder: "Find an artist"
+    %>
+    <%= button_tag "Search", class: "btn btn-light", id: "btn-search" %>
+  <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
