@@ -8,7 +8,7 @@
         <h5 class="card-header">No videos yet?</h5>
         <div class="card-body">
           <h5 class="card-title">You can order videos inside your artists details!</h5>
-            <%= link_to "Search for an artist!", root_path, class:"btn btn-primary" %>
+            <%= link_to "Search for an artist!", root_path, class:"bttn-default" %>
         </div>
       </div>
     <% @videos.each do |video| %>
@@ -19,7 +19,7 @@
           <% if video.review && video.rating %>
             <h5 class="card-title"> Review: <%= "#{video.review} - #{video.rating}" %></h5>
           <% elsif video.status == "completed" %>
-            <%= link_to "Add a review for this video", add_review_path(video), class:"btn btn-primary" %>
+            <%= link_to "Add a review for this video", add_review_path(video), class:"bttn-default" %>
           <% end %>
         </div>
       </div>
