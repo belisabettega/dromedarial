@@ -2,20 +2,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
+  margin: 0 5% 2%;
+
   :hover {
     text-decoration: none;
   }
 
-  .bg-img {
-    background-image: url("https://kitt.lewagon.com/placeholder/users/dedemenezes");
-    background-position: center;
-    background-size: cover;
-    transition: transfomr 0.6s;
-  }
-
   .gradient-box {
-    border: 8px solid black;
-    border-radius: 10px;
+    border: 6px solid black;
+    border-radius: 16px;
   }
 }
 
@@ -27,23 +22,21 @@
   height: 400px;
   box-shadow: 1px 1px 2px gray;
   text-align: center;
-  overflow:hidden;
+  overflow: hidden;
 
   .artist-name {
     background-color: #F4F4F4;
     margin-top: 50px;
     padding: 5% 20px;
+    box-shadow: -10px 8px 40px black;
     -webkit-transform: skewY(5deg);
   }
 
   .artist-role {
     display: flex;
     justify-content: center;
-
-    font-family: 'Fredoka One', cursive;
     color: white;
     font-size: 2em;
-
     -webkit-transform: skewY(5deg);
     -moz-transform: skewY(5deg);
     -ms-transform: skewY(5deg);
@@ -56,10 +49,6 @@
   h3 {
     font-family: 'Fredoka One', cursive;
   }
-}
-
-.bg-img:hover {
-  transform: scale(1.1);
 }
 
 .container-cards {

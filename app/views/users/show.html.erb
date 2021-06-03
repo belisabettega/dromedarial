@@ -1,14 +1,14 @@
 <div class="container">
-  <div class="user-details ">
+  <div class="user-details">
 
    <% if @user.photo.present? %>
    <div class="gradient-box user-details-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>')"></div>
    <% end %>
-   <div class="user-info ">
+   <div class="user-info">
      <h2 class="gradient-text"><%= @user.name.upcase%></h2>
      <h4 class="gradient-text"><%= @user.role%></h4>
      <p class="gradient-text">Hi, my name is <%= @user.name%></p>
-     <div class="reviews ">
+     <div class="reviews">
        <p class="mr-4 gradient-text"><i class="far fa-clock"></i> answer in 24hs</p>
        <p class="gradient-text"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
      </div>
