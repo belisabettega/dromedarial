@@ -31,8 +31,6 @@
   }
 }
 
-
-.user-details
 .reviews {
   display:flex;
 }
@@ -40,16 +38,6 @@
 .user-info {
   width:50%;
 }
-
-.gradient-text {
-    background-image: $gradient-color;
-    background-size: 100%;
-
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-  }
 
 a {
   color: white;
