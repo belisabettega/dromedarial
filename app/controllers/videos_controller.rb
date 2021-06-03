@@ -10,7 +10,7 @@ class VideosController < ApplicationController
     @video.user_id = current_user.id
     @user = User.find(params[:video][:user_id])
     authorize @video
-    if @video.save!
+    if @video.save
       redirect_to root_path
     else
       redirect_to new_user_video_path(@user)
