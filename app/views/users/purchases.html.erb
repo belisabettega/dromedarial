@@ -36,16 +36,19 @@
                   <%= link_to "Add a review for this video", add_review_path(video), class:"bttn-default" %>
                 <% end %>
               <% end %>
-            </div>
-          <%elsif index < 1%>
-            <div class="item-video">
+            </div>            
+          <%end%>
+        <% end %>
+      </div>
+      <% if @videos.blank?%>
+        <div class="wrapper-video">
+          <div class="item-video">
               <div class="text-card">
                 <h3>No pending videos to send!</h3>
               </div>
             </div>
-          <%end%>
-        <% end %>
-      </div>
+        </div>
+      <% end%>
     </div>
   </div>
 </div>
