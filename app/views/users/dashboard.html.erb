@@ -130,7 +130,7 @@
 
       <div class="wrapper-video">
         <% @videos.each_with_index do |video, index| %>
-          <%if video.status == "Pendent"%>
+          <%if video.status == "Pending"%>
             <div class="item-video">
               <div class="text-card">
                 <h3><%= video.category.title %></h3>
@@ -149,7 +149,7 @@
             </div>
           <%end%>
         <% end %>
-        <% if @videos.where(status: "Pendent").blank? %>
+        <% if @videos.where(status: "Pending").blank? %>
           <div class="wrapper-video">
             <div class="item-video">
               <div class="text-card">
