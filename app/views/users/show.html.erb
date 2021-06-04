@@ -25,7 +25,7 @@
       <div class="review">
         <div class="review-content">
           <% if video.user.photo.present? %>
-             <%= cl_image_tag video.user.photo.key,  crop: :fill, class: "avatar-large" %>
+             <%= cl_image_tag video.user.photo.key, crop: :thumb, gravity: :face, class: "avatar-large" %>
           <% else %>
             <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
           <% end %>
