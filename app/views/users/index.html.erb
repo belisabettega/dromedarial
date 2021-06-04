@@ -15,7 +15,7 @@
     <% @users.each do |user| %>
       <%= link_to user_path(user) do %>
          <% if user.photo.present? %>
-           <div class="user-card gradient-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path user.photo.key, height: 300, crop: :fill %>')">
+           <div class="user-card gradient-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path user.photo.key, height: 400, width: 250, crop: :fill, gravity: :face %>')">
          <% else %>
            <div class="user-card gradient-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://kitt.lewagon.com/placeholder/users/dedemenezes')">
          <% end %>
