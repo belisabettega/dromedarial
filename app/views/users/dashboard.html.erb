@@ -58,7 +58,7 @@
               <% if @videos.count > 0 %>
                 <i class="far fa-star"></i><%= "#{total_rating / @videos.count}" %>
               <% else %>
-                <i class="far fa-star"></i><%= "#{total_rating}" %>
+                <i class="far fa-star"></i><%= "0" %>
               <% end %>
             </h5>
           </div>
@@ -118,6 +118,16 @@
       </div>
     </div>
   </div>
+ <div class="row mb-5">
+    <div class="col-12">
+      <div class="wrapper-embbed-video">
+        <div class="item-embbed-video">
+          <iframe width="300" height="400" src="https://www.youtube.com/embed/8RAxmXihlAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 
