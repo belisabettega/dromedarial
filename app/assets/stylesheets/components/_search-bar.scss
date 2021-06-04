@@ -3,7 +3,7 @@
   width: 40px;
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
-  background: rgba(255, 255, 255, 0.568);
+  background: rgba(255, 255, 255, 0.15);
   border:none;
 }
 
@@ -11,7 +11,7 @@
   border:none;
   outline:none;
   padding: 5px 10px;
-  background-color: rgba(255, 255, 255, 0.568);
+  background-color: rgba(255, 255, 255, 0.15);
   font-size: 16px;
   line-height: 30px;
   border-top-right-radius: 20px;
@@ -20,8 +20,9 @@
 }
 
 .search-input:focus {
-  background: rgba(255, 255, 255, 0.568);
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.25);
+  outline:none !important;
+  color: whitesmoke;
 }
 
 .search-icon {

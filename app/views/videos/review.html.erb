@@ -1,5 +1,7 @@
-<%= simple_form_for @video, url: set_review_path(@video) do |f| %>
-  <%= f.input :review %>
-  <%= f.input :rating %>
-  <%= f.submit %>
-<% end %>
+<div class="container-review login-box">
+  <%= simple_form_for @video, url: set_review_path(@video) do |f| %>
+    <%= f.input :review, label: false, placeholder: "Write your review here" %>
+    <%= f.input :rating, label: false, placeholder: "Rating" %>
+    <%= f.button :submit, class: 'bttn-white' %>
+  <% end %>
+</div>

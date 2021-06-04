@@ -1,4 +1,6 @@
-<%= simple_form_for(@video) do |f| %>
-  <%= f.input :content %>
-  <%= f.submit %>
-<% end %>
+<div class="container-new-video login-box">
+  <%= simple_form_for(@video) do |f| %>
+    <%= f.input :content, label: false, placeholder: "Content url" %>
+    <%= f.button :submit, class: 'bttn-white' %>
+  <% end %>
+</div>

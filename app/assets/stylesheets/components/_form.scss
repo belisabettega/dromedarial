@@ -9,6 +9,14 @@
   margin: 150px auto;
   display: flex;
   flex-direction: column;
+
+  .bttn-white {
+    padding: 10px;
+  }
+
+  option {
+    background: #ED413A;
+  }
 }
 
 .login-box h2 {
@@ -51,6 +59,14 @@
 .form-group {
   .form-check {
     padding: 0 0 0 0;
+    color: white;
+  }
+}
+
+.form-control {
+  background-color: #ffffff26;
+  &:focus {
+    background-color: #ffffff26;
     color: white;
   }
 }
