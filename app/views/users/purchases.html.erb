@@ -1,45 +1,36 @@
 <div class="container">
-
   <div class="row mt-5">
-
-
     <div class="col-12 d-flex">
-
       <div class="mr-5">
         <h3>My Videos</h3>
       </div>
-
       <div>
         <%= link_to "Buy a new video", root_path, class:'bttn-white' %>
       </div>
-
     </div>
   </div>
-
   <div class="row mt-5 mb-5">
     <div class="col-12">
-
       <div class="wrapper-video">
         <% @videos.each_with_index do |video, index| %>
-            <%if video.category.user.photo.present? %>
-              <div class="item-video" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path video.category.user.photo.key, height: 300, crop: :fill %>')">
-            <%else%>
-               <div class="item-video">
+          <%if video.category.user.photo.present? %>
+            <div class="item-video" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path video.category.user.photo.key, height: 300, crop: :fill %>')"></div>
+          <%else%>
+            <div class="item-video">
+          <% end %>
+          <div class="text-card">
+            <h3><%= "#{video.category.user.name} - #{video.category.title}" %></h3>
+          </div>
+          <p><%= video.status %></p>
+          <% if video.review && video.rating %>
+            <h5 class="card-title"><%= video.review %></h5>
+            <h5><i class="far fa-star"></i><%= video.rating %></h5>
+          <% elsif video.status == "completed" %>
+            <% if policy(video).set_review? %>
+              <%= link_to "Add a review for this video", add_review_path(video), class:"bttn-default" %>
             <% end %>
-              <div class="text-card">
-                <h3><%= "#{video.category.user.name} - #{video.category.title}" %></h3>
-              </div>
-
-              <p><%= video.status %></p>
-              <% if video.review && video.rating %>
-                <h5 class="card-title"><%= video.review %></h5>
-                <h5><i class="far fa-star"></i><%= video.rating %></h5>
-              <% elsif video.status == "completed" %>
-                <% if policy(video).set_review? %>
-                  <%= link_to "Add a review for this video", add_review_path(video), class:"bttn-default" %>
-                <% end %>
-              <% end %>
-            </div>            
+          <% end %>
+          </div>
         <% end %>
       </div>
       <% if @videos.blank?%>
