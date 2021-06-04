@@ -33,13 +33,13 @@
           <div>
             <h5 class="card-title text-center"> Completed videos </h5>
             <h5 class="card-title text-center headline-text">
-              <% total_money = 0 %>
+              <% total_orders = 0 %>
               <% current_user.videos.each do |video| %>
                 <% if video.status == "completed" %>
-                  <% total_money += 1 %>
+                  <% total_orders += 1 %>
                 <%end%>
               <%end%>
-              <i class="fas fa-check"></i><%= total_money %>
+              <i class="fas fa-check"></i><%= total_orders %>
             </h5>
           </div>
         </div>
