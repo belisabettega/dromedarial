@@ -18,7 +18,7 @@
             <h5 class="card-title text-center">Your total until now</h5>
             <h5 class="card-title text-center headline-text">
               <% total_money = 0 %>
-              <% current_user.videos.each do |video| %>
+              <% @videos.each do |video| %>
                 <% if video.status == "completed" %>
                   <% total_money += video.category.price.to_f %>
                 <%end%>
@@ -33,13 +33,13 @@
           <div>
             <h5 class="card-title text-center"> Completed videos </h5>
             <h5 class="card-title text-center headline-text">
-              <% total_orders = 0 %>
-              <% current_user.videos.each do |video| %>
+              <% total_money = 0 %>
+              <% @videos.each do |video| %>
                 <% if video.status == "completed" %>
-                  <% total_orders += 1 %>
+                  <% total_money += 1 %>
                 <%end%>
               <%end%>
-              <i class="fas fa-check"></i><%= total_orders %>
+              <i class="fas fa-check"></i><%= total_money %>
             </h5>
           </div>
         </div>
@@ -50,13 +50,13 @@
             <h5 class="card-title text-center">Your rating media</h5>
             <h5 class="card-title text-center headline-text">
               <% total_money = 0 %>
-              <% current_user.videos.each do |video| %>
+              <% @videos.each do |video| %>
                 <% if video.status == "completed" %>
                   <% total_money += video.rating if !video.rating.nil? %>
                 <%end%>
               <%end%>
-              <% if current_user.videos.count > 0 %>
-                <i class="far fa-star"></i><%= "#{total_money / current_user.videos.count}" %>
+              <% if @videos.count > 0 %>
+                <i class="far fa-star"></i><%= "#{total_money / @videos.count}" %>
               <% else %>
                 <i class="far fa-star"></i><%= "#{total_money}" %>
               <% end %>
@@ -66,16 +66,17 @@
       </div>
     </div>
   </div>
+
   <div class="row">
     <div class="col-12">
       <div class="wrapper my-3">
-        <% current_user.categories.each do |category| %>
+        <% @user.categories.each do |category| %>
           <div class="item d-flex justify-content-center align-items-center">
             <h6 class="text-card "><%= category.title %></h6>
           </div>
         <% end %>
       </div>
-      <% if current_user.categories.blank? %>
+      <% if @user.categories.blank? %>
         <div class="wrapper my-3">
           <div class="item d-flex justify-content-center align-items-center">
             <h6 class="text-card ">No cateories yet!</h6>
