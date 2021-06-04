@@ -21,8 +21,11 @@
 
       <div class="wrapper-video">
         <% @videos.each_with_index do |video, index| %>
-          <%if video.status %>
-            <div class="item-video">
+            <%if video.category.user.photo.present? %>
+              <div class="item-video" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path video.category.user.photo.key, height: 300, crop: :fill %>')">
+            <%else%>
+               <div class="item-video">
+            <% end %>
               <div class="text-card">
                 <h3><%= "#{video.category.user.name} - #{video.category.title}" %></h3>
               </div>
@@ -36,15 +39,28 @@
                   <%= link_to "Add a review for this video", add_review_path(video), class:"bttn-default" %>
                 <% end %>
               <% end %>
-            </div>
-          <%elsif index < 1%>
-            <div class="item-video">
+            </div>            
+        <% end %>
+      </div>
+      <% if @videos.blank?%>
+        <div class="wrapper-video">
+          <div class="item-video">
               <div class="text-card">
                 <h3>No pending videos to send!</h3>
               </div>
             </div>
-          <%end%>
-        <% end %>
+        </div>
+      <% end%>
+    </div>
+  </div>
+
+  
+  <div class="row">
+    <div class="col-12">
+      <div class="wrapper-embbed-video">
+        <div class="item-embbed-video">
+          <iframe width="350" height="400" src="https://www.youtube.com/embed/8RAxmXihlAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-lg"></iframe>
+        </div>
       </div>
     </div>
   </div>
