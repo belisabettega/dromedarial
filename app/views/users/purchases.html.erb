@@ -19,7 +19,7 @@
             <div class="item-video">
           <% end %>
           <div class="text-card">
-            <h3><%= "#{video.category.user.name} - #{video.category.title}" %></h3>
+            <h3><%= "#{video.category.title}" %></h3>
           </div>
           <p><%= video.status %></p>
           <% if video.review && video.rating %>
@@ -46,7 +46,7 @@
   </div>
 
   
-  <div class="row mb-5">
+  <div class="row my-5">
     <div class="col-12">
       <div class="wrapper-embbed-video">
         <div class="item-embbed-video">
