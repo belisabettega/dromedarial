@@ -8,7 +8,7 @@
   </button>
 
   <div class="form-box bd-highlight">
-    <%= form_tag root_path, method: :get, id: "search-form" do %>
+    <%= form_tag root_path(anchor: "search-anchor"), method: :get, id: "search-form" do %>
       <div class="d-flex">
         <%= button_tag '<i class="fas fa-search search-icon"></i>'.html_safe, type: 'submit', class: "search-button" %>
         <%= text_field_tag :query,
