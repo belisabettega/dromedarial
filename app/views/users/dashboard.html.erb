@@ -55,7 +55,14 @@
               <% total_money += video.rating %>
               <%end%>
             <%end%>
-            <i class="far fa-star"></i><%= "#{total_money / current_user.videos.count}" %>
+
+            <%  if current_user.videos.count > 0 %>
+                <i class="far fa-star"></i><%= "#{total_money / current_user.videos.count}" %>
+            <% else %>
+                <i class="far fa-star"></i><%= "#{total_money}" %>
+            <% end %>
+
+
             </h5>
           </div>
         </div>
