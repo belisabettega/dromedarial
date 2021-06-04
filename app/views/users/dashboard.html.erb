@@ -114,7 +114,13 @@
           </div>
         <% end %>
       </div>
-
+      <% if current_user.categories.blank? %>
+        <div class="wrapper my-3">
+          <div class="item d-flex justify-content-center align-items-center">
+            <h6 class="text-card ">No cateories yet!</h6>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 
@@ -141,15 +147,20 @@
                 <%end%>
               <% end %>
             </div>
-          <%elsif index < 1%>
+          <%end%>
+        <% end %>
+        <% if @videos.where(status: "Pendent").blank? %>
+          <div class="wrapper-video">
             <div class="item-video">
               <div class="text-card">
                 <h3>No pending videos to send!</h3>
               </div>
             </div>
-          <%end%>
+          </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
+
