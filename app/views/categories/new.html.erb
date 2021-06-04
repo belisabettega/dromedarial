@@ -1,5 +1,7 @@
-<%= simple_form_for(@category) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :price %>
-  <%= f.submit %>
-<% end %>
+<div class="container-category login-box">
+  <%= simple_form_for(@category) do |f| %>
+    <%= f.input :title, label: false, placeholder: "Title" %>
+    <%= f.input :price, label: false, placeholder: "Price (R$)" %>
+    <%= f.button :submit, class: 'bttn-white' %>
+  <% end %>
+</div>
