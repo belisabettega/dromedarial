@@ -50,13 +50,15 @@
             <h5 class="card-title text-center">Your rating media</h5>
             <h5 class="card-title text-center headline-text">
               <% total_rating = 0 %>
+              <% videos_completed = 0 %>
               <% @videos.each do |video| %>
                 <% if video.status == "completed" %>
                   <% total_rating += video.rating if !video.rating.nil? %>
+                  <% videos_completed += 1 %>
                 <%end%>
               <%end%>
               <% if @videos.count > 0 %>
-                <i class="far fa-star"></i><%= "#{total_rating / @videos.count}" %>
+                <i class="far fa-star"></i><%= "#{total_rating / videos_completed}" %>
               <% else %>
                 <i class="far fa-star"></i><%= "0" %>
               <% end %>
