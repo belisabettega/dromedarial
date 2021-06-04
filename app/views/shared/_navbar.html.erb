@@ -1,6 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex bd-highlight">
   <div class="mr-auto p-2 bd-highlight">
-    <%= link_to "home", root_path, class: "navbar-brand" %>
+
+    <%= link_to root_path do %>
+    <%= image_tag"camel.png",alt: "banner", width: 50 %>
+    <% end %>
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
