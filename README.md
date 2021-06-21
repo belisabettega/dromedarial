@@ -42,4 +42,4 @@ http://localhost:3000/
 ## Licensing
 [MIT License](https://choosealicense.com/licenses/mit/#)
 
-Copyright (c) 2021 CasaLarEmaus
+Copyright (c) 2021 Dromedaria
